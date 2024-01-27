@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(rgba(12,34,62,255), rgba(67,195,232,255));
+      }
+      
+      #noButton {
+        position: absolute;
+        margin-left: 150px;
+        transition: 0.5s;
+        margin-top: 30px;
+      }
+      
+      #yesButton {
+        position: absolute;
+        margin-right: 150px;
+        margin-top: 30px;
+      }
+      
+      .header_text {
+        font-family: "Nunito";
+        font-size: 50px;
+        font-weight: bold;
+      
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-left: 150px;
+        color: #ffffff;
+      }
+            
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+      
+      .btn {
+        background-color: #017cff;
+        color: white;
+        font-weight: 600;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        border-radius: 12px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 3px 3px black;
+      }
+      
+      .btn:hover {
+        background-color: #ffffff;
+        color: #017cff;
+      }
+      
+      .gif_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+     
+      
+   </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img src="banner.png" style="position: absolute; bottom:300px" alt="">
+        <h1 class="header_text" style="z-index: 100;">Did you register for "Ketchup 'n' Code" yet?</h1>
+      </div>
+      
+      <div class="gif_container">
+        <img
+          src="bottle.png"
+          alt="Ketchup.png"
+          width="300px"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Register now</button>
+        <button
+          class="btn"
+          id="noButton"
+          onmouseover="moveButton()"
+          onclick="moveButton()"
+        >
+          No
+        </button>
+
+        <script>
+          function nextPage() {
+            window.location.href = "https://forms.gle/jhTeVSPcjxr5botv6";
+          }
+
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+          }
+        </script>
+      </div>
+    </div>
+    
+  </body>
+</html>
